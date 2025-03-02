@@ -1,0 +1,117 @@
+\documentclass[12pt]{report}
+
+
+\usepackage[left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.75cm,a4paper]{geometry}
+\usepackage{booktabs,caption}
+\usepackage[flushleft]{threeparttable}
+\usepackage{indentfirst} %首行縮排
+\usepackage[inline]{enumitem}
+\usepackage{cite}
+
+\usepackage{float}
+\usepackage[section]{placeins}
+
+\usepackage{amsmath} 
+\usepackage[ruled, linesnumbered, noend, noline]{algorithm2e}
+
+\usepackage{url}
+
+\usepackage{graphicx} 
+\usepackage{epsf}
+\usepackage{amsmath}
+\usepackage{comment}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{setspace}
+\usepackage{multirow}
+\usepackage{amsthm}
+\usepackage{xcolor}
+\usepackage{colortbl}
+\theoremstyle{plain}
+\newtheorem{definition}{Definition}
+\newtheorem{remark}{Remark}
+\usepackage{mathtools}
+\usepackage{tabularx}
+\usepackage{tabulary}
+\usepackage{titlesec, titletoc}
+
+\usepackage{fontspec}
+\XeTeXlinebreaklocale "zh"
+\XeTeXlinebreakskip = 0pt plus 1pt
+\usepackage{xeCJK}
+\xeCJKsetup{AutoFakeBold=true, AutoFakeSlant=true}
+\usepackage{CJKnumb}
+\usepackage{ragged2e} 
+\usepackage[hidelinks]{hyperref}
+
+\usepackage{subfig}
+\usepackage{tikz}
+\usepackage[framemethod=tikz]{mdframed}
+
+\input{macros_clean}
+\input{style} % change style
+\input{env}   % define environment and parameters
+\setlang{zh}  % change the base-lang `zh`-中文 `en`-英文
+
+% Define parameters for initialization
+\settitles{中文標題}{英文標題}
+\renewcommand{\authorzh}{學生名}
+\renewcommand{\authoren}{Student Name}
+\renewcommand{\advisorzh}{導師名}
+\renewcommand{\advisoren}{Advisor Name}
+\renewcommand{\degreezh}{碩士}
+\renewcommand{\degreeen}{Master}
+\renewcommand{\depzh}{電子工程系}
+\renewcommand{\depen}{Department of Electronic Engineering}
+\renewcommand{\schoolzh}{國立臺北科技大學}
+\renewcommand{\schoolen}{National Taipei University of Technology}
+\renewcommand{\yearzh}{一百一十四}
+\renewcommand{\yearen}{2025}
+\renewcommand{\monzh}{六月}
+\renewcommand{\monen}{June}
+\renewcommand{\semesterzh}{二}
+\renewcommand{\semesteren}{2}
+
+\begin{document}
+
+%封面
+\makecoverpage
+
+\maketitlepage
+
+\checkresult{} % {}中填入審定書檔名
+
+\begin{init} % 羅馬數字標記區域
+
+\begin{abszh}{關鍵詞1、關鍵詞2、關鍵詞3}
+中文摘要
+\end{abszh}
+
+%英文摘要
+\begin{absen}{keyword1, keyword2, keyword3,}
+English abstract
+\end{absen}
+
+%誌謝
+\begin{ack}
+致謝文章
+\end{ack}
+
+% 建立目錄
+\makecontentlists
+
+\end{init}
+
+\chapter{章標題}
+
+\section{節標題}
+
+\subsection{小節標題}
+
+這是正文區域。
+
+\clearpage
+\addcontentsline{toc}{chapter}{\bibname}
+\bibliographystyle{IEEEtran}
+\bibliography{ref}
+\end{document}
