@@ -49,18 +49,25 @@
 \usepackage[framemethod=tikz]{mdframed}
 
 \input{macros_clean}
-\input{style} % change style
-\input{env}   % define environment and parameters
-\setlang{zh}  % change the base-lang `zh`-中文 `en`-英文
+\input{style}  % define style
+\input{env}    % define environment and parameters
+\setlang{zh}   % change the base-lang `zh`-中文 `en`-英文
+\setdegree{ms} % change format of degree `ms`-碩士論文 `phd`-博士論文  
+
+\setmainfont{Times New Roman}  % 可自定義英文內文主要字體 (預設)
+% \setCJKmainfont{標楷體}         % 可自定義中文內文主要字體 (Windows 內建楷體)
+\setCJKmainfont{標楷體-繁}      % 可自定義中文內文主要字體 (Mac OS 內建楷體)
+% \setCJKmainfont{教育部標準楷書}  % 可自定義中文內文主要字體 (教育部提供下載的楷體)
+% \setCJKmainfont{cwTeXKai}      % Overleaf 可用中文楷體
+% \setCJKmainfont{TW-Kai}        % Overleaf 可用中文楷體
 
 % Define parameters for initialization
-\settitles{中文標題}{英文標題}
+\renewcommand{\titlezh}{中文標題}
+\renewcommand{\titleen}{English Title}
 \renewcommand{\authorzh}{學生名}
 \renewcommand{\authoren}{Student Name}
 \renewcommand{\advisorzh}{導師名}
 \renewcommand{\advisoren}{Advisor Name}
-\renewcommand{\degreezh}{碩士}
-\renewcommand{\degreeen}{Master}
 \renewcommand{\depzh}{電子工程系}
 \renewcommand{\depen}{Department of Electronic Engineering}
 \renewcommand{\schoolzh}{國立臺北科技大學}
@@ -72,23 +79,27 @@
 \renewcommand{\semesterzh}{二}
 \renewcommand{\semesteren}{2}
 
+% \setcounter{tocdepth}{1} % 修改目錄深度
+
 \begin{document}
 
 %封面
-\makecoverpage
+\makecoverpage % 生成論文紙本封面 (僅紙本論文需要)
 
-\maketitlepage
+\maketitlepage % 生成電子論文封面 (電子論文從此頁開始)
 
-\checkresult{} % {}中填入審定書檔名
+\checkresult{} % {}中填入審定書檔名 (相對路徑上的檔名)
+% \makeverif{\depzh}{\authorzh}              % 生成審定書模板，兩個參數為 {系所名}{學生名}
+% \onlyverificationletter{\depzh}{\authorzh} % 生成審定書模板並終止編譯
 
 \begin{init} % 羅馬數字標記區域
 
-\begin{abszh}{關鍵詞1、關鍵詞2、關鍵詞3}
+\begin{abszh}{關鍵詞1、關鍵詞2、關鍵詞3、...}
 中文摘要
 \end{abszh}
 
 %英文摘要
-\begin{absen}{keyword1, keyword2, keyword3,}
+\begin{absen}{keyword1, keyword2, keyword3,...}
 English abstract
 \end{absen}
 
